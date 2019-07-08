@@ -26,7 +26,19 @@ test('fixtures', function (assert) {
 
   assert.equal(murmur3(new Uint8Array(), 0xffffffff) >>> 0, 0x81F16F39)
 
-  assert.equal(murmur3(Buffer.from('abcdbcdecdefdefgefghfghighijhijkijkljklmklmnlmnomnopnopq'), 0) >>> 0, 0xEE925B90)
+  assert.equal(murmur3(Buffer.from('Hello wor')) >>> 0, 220812671, 'Hello wor')
+  assert.equal(murmur3(Buffer.from('Hello worl')) >>> 0, 3633227568, 'Hello worl')
+  assert.equal(murmur3(Buffer.from('Hello world')) >>> 0, 2911983372, 'Hello world')
+  assert.equal(murmur3(Buffer.from('Hello world!')) >>> 0, 1652231212, 'Hello world!')
+  assert.equal(murmur3(Buffer.from('abcdbcdecdefdefgefghfghighijhijkijkljklmklmnlmnomnopnopq'), 0) >>> 0, 0xEE925B90, 'random')
+  assert.equal(murmur3(Buffer.from('Hello world!')) >>> 0, 1652231212, 'Hello world!')
+  assert.equal(murmur3(Buffer.from('Hello world')) >>> 0, 2911983372, 'Hello world')
+  assert.equal(murmur3(Buffer.from('Hello worl')) >>> 0, 3633227568, 'Hello worl')
+  assert.equal(murmur3(Buffer.from('Hello wor')) >>> 0, 220812671, 'Hello wor')
+  assert.equal(murmur3(Buffer.from('Hello wor')) >>> 0, 220812671, 'Hello wor')
+  assert.equal(murmur3(Buffer.from('Hello worl')) >>> 0, 3633227568, 'Hello worl')
+  assert.equal(murmur3(Buffer.from('Hello world')) >>> 0, 2911983372, 'Hello world')
+  assert.equal(murmur3(Buffer.from('Hello world!')) >>> 0, 1652231212, 'Hello world!')
 
   assert.end()
 })
