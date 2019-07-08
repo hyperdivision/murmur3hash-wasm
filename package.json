@@ -1,5 +1,5 @@
 {
-  "name": "@hyperdivision/murmur3hash-wasm",
+  "name": "murmur3hash-wasm",
   "version": "0.0.0",
   "description": "Murmur3 Hash implemented in hand-written WASM",
   "main": "index.js",
