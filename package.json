@@ -1,6 +1,6 @@
 {
   "name": "murmur3hash-wasm",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Murmur3 Hash implemented in hand-written WASM",
   "main": "index.js",
   "publishConfig": {
