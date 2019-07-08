@@ -15,6 +15,12 @@
     "wat2js": "^2.1.1",
     "wat2wasm": "^1.0.2"
   },
+  "standard": {
+    "globals": [
+      "WebAssembly",
+      "atob"
+    ]
+  },
   "scripts": {
     "compile": "wat2js murmur3.wat -o murmur3.js",
     "pretest": "standard",

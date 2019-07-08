@@ -37,7 +37,7 @@ function loadWebAssembly (opts) {
 
     try {
       if (opts && opts.async) throw new Error('async')
-      setup({instance: new WebAssembly.Instance(new WebAssembly.Module(wasm), imp)})
+      setup({ instance: new WebAssembly.Instance(new WebAssembly.Module(wasm), imp) })
     } catch (err) {
       ready = WebAssembly.instantiate(wasm, imp).then(setup)
     }
