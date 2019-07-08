@@ -15,7 +15,8 @@
 
     (set_local $data.end
                (i32.add (get_local $data.ptr)
-                        (get_local $data.len)))
+                        (i32.and (get_local $data.len)
+                                 (i32.const 0xfffffffc))))
 
     (set_local $h
                (get_local $seed))
