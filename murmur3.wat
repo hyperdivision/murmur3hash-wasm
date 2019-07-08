@@ -40,19 +40,16 @@
                                                              (i32.const 4)))
                                          (get_local $data.end))))))
 
-    (set_local $k (i32.const 0))
     (block $switch
       (block $0 (result i32)
         (block $1 (result i32)
           (block $2 (result i32)
             (block $3 (result i32)
-              (set_local $data.end (i32.shl (i32.shr_u (get_local $data.end)
-                                                       (i32.const 2))
-                                            (i32.const 2)))
-              (get_local $k)
-              (br_table $0 $1 $2 $3
-                        (i32.and (get_local $data.len)
-                                 (i32.const 3))))
+              (block $inner (result i32)
+                (i32.const 0)
+                (br_table $0 $1 $2 $3
+                          (i32.and (get_local $data.len)
+                                   (i32.const 3)))))
             (i32.load8_u offset=2 (get_local $data.end))
             (i32.shl (i32.const 16))
             (i32.xor))
