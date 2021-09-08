@@ -40,5 +40,9 @@ test('fixtures', function (assert) {
   assert.equal(murmur3(Buffer.from('Hello world')) >>> 0, 2911983372, 'Hello world')
   assert.equal(murmur3(Buffer.from('Hello world!')) >>> 0, 1652231212, 'Hello world!')
 
+  assert.equal(murmur3(Buffer.alloc(65535)) >>> 0, 2878094072, '65535 bytes')
+  assert.equal(murmur3(Buffer.alloc(65536)) >>> 0, 2603582549, '65536 bytes')
+  assert.equal(murmur3(Buffer.alloc(65537)) >>> 0, 1955252949, '65537 bytes')
+
   assert.end()
 })
